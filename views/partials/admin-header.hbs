@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/admin/admin-dashboard.css">
+    <title>Admin Dashboard</title>
+     
+    <!--Ionic Icons-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <section id="menu">
+        <div class="logo">
+            <h2>Admin Panel</h2>
+        </div>
+ 
+        <div class="items">
+            <li><ion-icon name="pie-chart-outline"></ion-icon><a href="/admin/dashboard">Dashboard</a></li>
+            <li><ion-icon name="add-circle-outline"></ion-icon><a href="/admin/add-user">Add User</a></li>
+            <li><ion-icon name="arrow-up-circle-outline"></ion-icon><a href="/admin/update-user">Update User</a></li>
+            <li><ion-icon name="trash-outline"></ion-icon><a href="/admin/delete-page">Delete User</a></li>
+            <li><ion-icon name="home-outline"></ion-icon><a href="/users/home">Visit Home</a></li>
+            <li><ion-icon name="log-out-outline"></ion-icon><a href="/admin/logout">Logout</a></li>
+           
+        </div>
+    </section>
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div>
+                    <ion-icon id="menu-btn" name="menu-outline"></ion-icon>
+                </div>
+                <div class="">
+                    <form action="/admin/search" class="search px-2" method="get">
+                        <ion-icon name="search-outline"></ion-icon>
+                        <input class="mb-0 bg-transparent" id="search-input" type="text" name="key" placeholder="Search Users" required>
+                        <button class="btn bg-black text-white border-0 rounded-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="profile">
+                <h6 id="username">Admin</h6>
+            </div>
+        </div>

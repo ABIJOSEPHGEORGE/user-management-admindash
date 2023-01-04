@@ -1,0 +1,112 @@
+        <h3 class="page_name">Dashboard</h3>
+
+       
+
+        <div class="values">
+            <a href="/admin/add-user" class="val-box">
+                <ion-icon name="add-circle-outline"></ion-icon>
+                <div>
+                    <h3>Add New User</h3>
+                </div>
+            </a>
+            <a href="/admin/update-user" class="val-box">
+                <ion-icon name="arrow-up-circle-outline"></ion-icon>
+                <div>
+                    <h3>Update User</h3>
+                </div>
+            </a>
+            <a href="/admin/delete-page" class="val-box">
+                <ion-icon name="trash-outline"></ion-icon>
+                <div>
+                    <h3>Delete User</h3>
+                </div>
+            </a>
+            <a href="#" class="val-box">
+                <h3>Number of Users :</h3>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <p class="ps-3 m-0 fw-bold">{{count}}</p>
+                </div>
+            </a>
+        </div>
+        
+         {{#if msg}}
+            <div class="d-flex flex-column w-100 justify-content-center align-items-center">
+                <img src="/images/Empty-bro.svg" class="w-25" alt="No data found">
+                <p class="text-black text-center fs-4">{{msg}}</p>
+            </div>
+        {{/if}}
+
+
+        {{#if searchdata}}
+        <div class="board">
+            <table width="100%">
+                <thead>
+                     <tr>
+                        <td>username</td>
+                        <td>email</td>
+                        <td>Update</td>
+                        <td>Delete</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each searchdata}}
+                    <tr>
+                        <td class="people">
+                            <div class="people-de">
+                                <h5>{{this.username}}</h5>
+                            </div>
+                        </td>
+                        <td class="email">
+                            <h5>{{this.email}}</h5>
+                        </td>
+                        <td class="edit"><a href="/admin/update-form?id={{this._id}}">Update</a></td>
+                        <td class="delete"><a href="/admin/delete-user?id={{this._id}}">Delete</a></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{/if}}
+
+       
+
+        {{#if data}}
+        <div class="board">
+            <table width="100%">
+                <thead>
+                     <tr>
+                        <td>username</td>
+                        <td>email</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td class="people">
+                            <div class="people-de">
+                                <h5>{{this.username}}</h5>
+                            </div>
+                        </td>
+                        <td class="email">
+                            <h5>{{this.email}}</h5>
+                        </td>
+                        <td class="edit"><a href="/admin/update-form?id={{this.id}}">Update</a></td>
+                        
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{/if}}
+
+    <script>
+				//avoiding form resubmission
+		if ( window.history.replaceState ) {
+			window.history.replaceState( null, null, window.location.href );
+		}
+	</script>
+    <!--Ionic Icons-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+

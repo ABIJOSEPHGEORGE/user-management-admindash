@@ -1,0 +1,23 @@
+
+        <h3 class="page_name text-center text-decoration-underline" style="margin-top: 75px;">Update User</h3>
+ 
+        <div class="wrapper">
+            <h2>Update user here</h2>
+            <form action="/admin/update-user" method="POST">
+                <input type="text" name="username" placeholder="username" value={{data.username}} required>
+                <input type="email" name="email" placeholder="email" value={{data.email}} required>
+                <p class="bg-danger text-white rounded">{{err}}</p>
+                <p class="bg-success text-white rounded">{{success}}</p>
+                <br><input type="submit" class="form-btn" value="Update user">
+            </form>
+        </div>
+    <script>
+				//avoiding form resubmission
+		if ( window.history.replaceState ) {
+			window.history.replaceState( null, null, window.location.href );
+		}
+	</script
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+

@@ -1,0 +1,26 @@
+
+        <h3 class="page_name text-center text-decoration-underline text-black" style="margin-top: 75px;">Add Users</h3>
+ 
+        <div class="wrapper" style="height: 68vh; !important">
+            <h2 class="">Add user here</h2>
+            <form action="/admin/add-user" method="POST">
+                <input type="text" name="username" placeholder="username">
+                <input type="email" name="email" placeholder="email">
+                <input type="password" name="password" placeholder="password">
+                <input type="password" name="confirm_password" placeholder="confirm password">
+                <p class="bg-danger text-white">{{err}}</p>
+                <p class="bg-success text-white">{{success}}</p>
+                <br><input type="submit" class="form-btn" value="Add user">
+            </form>
+        </div>
+
+    <script>
+		//avoiding form resubmission
+		if ( window.history.replaceState ) {
+			window.history.replaceState( null, null, window.location.href );
+		}
+	</script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+

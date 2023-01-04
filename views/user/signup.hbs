@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Create your Account</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/nunito-font.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="/stylesheets/user/signup.css"/>
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+</head>
+<body class="form-v6">
+	<div class="page-content">
+		<div class="form-v6-content">
+			<div class="form-left">
+				<img src="images/form-v6.jpg" alt="form">
+			</div>
+			<form class="form-detail" action="/signup" method="post">
+				<h2>Register Form</h2>
+				<div class="form-row">
+					<input type="text" name="username" id="full-name" class="input-text" placeholder="Username" required>
+				</div>
+				<div class="form-row">
+					<input type="text" name="email" id="your-email" class="input-text" placeholder="Email Address" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+				</div>
+				<div class="form-row">
+					<input type="password" name="password" id="password" class="input-text" placeholder="Password" required>
+				</div>
+				<div class="form-row">
+					<input type="password" name="confirm_password" id="comfirm_password" class="input-text" placeholder="Confirm Password" required>
+				</div>
+				<div class="form-row-last">
+					<button type="submit" class="register">Register</button>
+				</div>
+                <p class="rounded text-danger fw-bold text-center">{{err}}</p>
+                <p class="mb-5 pb-lg-2" style="color: #000000;">Already have an account?
+                <a href="/" style="color: #393f81;">Sign In here</a></p>
+			</form>
+		</div>
+	</div>
+	<script>
+				//avoiding form resubmission
+		if ( window.history.replaceState ) {
+			window.history.replaceState( null, null, window.location.href );
+		}
+	</script>
+</body>
+</html>
